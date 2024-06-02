@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>minkowski functionals term paper</title>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+  /* Style for the container */
+  .subfigures {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0;
+  }
+  /* Style for each subfigure */
+  .subfigure {
+      flex: 1;
+      text-align: center;
+  }
+  .subfigure img {
+      width: 100%;
+      max-width: 200px; /* Adjust as needed */
+      height: auto;
+  }
+  .subfigure figcaption {
+      font-style: italic;
+  }
+</style>
+<style>
+  /* Container for figures and text */
+  .container {
+      display: flex;
+      flex-wrap: wrap;
+  }
+  /* Style for figures */
+  .figure {
+      flex: 0 0 auto;
+      padding: 10px; /* Adjust padding as needed */
+      box-sizing: border-box;
+  }
+  .figure img {
+      max-width: 100%; /* Adjust maximum width */
+      height: auto;
+  }
+  /* Style for text */
+  .text {
+      flex: 1;
+      font-size: 16px;
+      line-height: 1.6;
+  }
+
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+}
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url("figures/Explosion In Space.jpeg");
+  min-height: 100%;
+ 
+}
+
+.menu {
+  display: none;
+}
+</style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+    <span class="w3-tag">Advanced computational physics term paper</span>
+  </div>
+  <div class="w3-display-middle w3-center">
+    <span class="w3-text-black" style="font-size:90px">MINKOWSKI FUNCTIONAL<br>ANALYSIS</span>
+  </div>
+  <div class="w3-display-bottomright w3-center w3-padding-large">
+    <span class="w3-text-white">Done by Gayathri K,2011067</span>
+  </div>
+</header>
+
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-col s2">
+      <a href="#" class="w3-button w3-block w3-black">HOME</a>
+    </div>
+    <div class="w3-col s2">
+      <a href="#introduction" class="w3-button w3-block w3-black">ABOUT</a>
+    </div>
+   <div class="w3-col s2">
+      <a href="#data-and-implementation" class="w3-button w3-block w3-black">SIMULATIONS</a>
+    </div>
+    <div class="w3-col s2">
+      <a href="#statistical-analysis" class="w3-button w3-block w3-black">ANALYSIS</a>
+    </div>
+    <div class="w3-col s2">
+      <a href="#results-and-conclusions" class="w3-button w3-block w3-black">RESULTS</a>
+    </div>
+    <div class="w3-col s2">
+        <a href="#ref" class="w3-button w3-block w3-black">REFERENCES</a>
+      </div>
+  </div>
+</div>
+
+
+<!-- Add a background color and large text to the whole page -->
+
+    <div class="w3-content" style="max-width:700px">
+      <h1 class="w3-center w3-padding-64" id="introduction"><span class="w3-tag w3-wide">Introduction</span></h1>
+
+<figure id="fig_mom0">
+<img src="figures/Ilc_9yr_moll4096.png" style="width:100%;max-width:1000px;margin-top:32px;" />
+<figcaption>Nine-year Wilkinson Microwave Anisotropy Probe heat map of
+temperature fluctuations in the cosmic microwave background. It shows
+the very small temperature variation (from the average) of 1 part in
+100000; these ultimately resulted in the galaxies we see
+today.</figcaption>
+</figure>
+<p>The Cosmic Microwave Background (CMB) radiation, originating
+approximately 300,000 years after the Big Bang, is the oldest accessible
+signal from the early universe. Discovered by Penzias and Wilson in
+1965, its uniformity and blackbody spectrum provide compelling evidence
+for the Big Bang theory. The study of CMB offers valuable insights into
+the universe’s composition, age, and evolution, aiding in refining
+cosmological models and understanding its origins precisely.</p>
+<p>CMB anisotropies reflect matter fluctuations during recombination.
+Various statistical methods, including power spectrum analysis and
+correlation functions, have been employed to study CMB maps. One
+promising approach involves quantifying the maps’ morphology using shape
+parameters called Minkowski functionals. These descriptors offer
+sensitivity to non-Gaussian signatures in temperature fluctuations,
+potentially revealing information about topological defects from early
+universe phase transitions.</p>
+<p>This paper focuses on the excursion sets and isodensity contours of
+random fields for Minkowski functional analysis, aiming to enhance our
+understanding of CMB morphology and its cosmological implications.</p>
+
+
+
+
+</div>
+</div>
+
+<div class="w3-container" id="about">
+  <div class="w3-content" style="max-width:700px">
+    <h1 class="w3-center w3-padding-64" id="cosmic-microwave-background-radiation"><span class="w3-tag w3-wide">About CMB radiation</span></h1>
+
+
+<h2 id="cmb-power-spectrum">CMB power spectrum</h2>
+<figure id="powspe">
+<img src="figures/Planck_Power_Spectrum.jpg" style="width:100%;max-width:1000px;margin-top:32px;" />
+<figcaption>This is the power spectrum which shows the temperature
+variation (squared) as a function of multipole moment(<span
+class="math inline"><em>l</em></span>). It is from this graph that many
+of the cosmic parameters are derived.</figcaption>
+</figure>
+<p>The power spectrum of CMB anisotropies, <span
+class="math inline"><em>C</em><sub>ℓ</sub></span>, quantifies the
+distribution of temperature fluctuations across different angular scales
+<span class="math inline">ℓ</span>. It is defined as the expectation
+value of the square of the spherical harmonic coefficients, <span
+class="math inline"><em>a</em><sub>ℓ<em>m</em></sub></span>, which
+describe the temperature fluctuations on the celestial sphere: <span
+class="math display">$$C_\ell = \frac{1}{2\ell + 1}
+\sum_{m=-\ell}^{\ell} |a_{\ell m}|^2$$</span> The coefficients <span
+class="math inline"><em>a</em><sub>ℓ<em>m</em></sub></span> are obtained
+by decomposing the temperature fluctuations on the CMB sky into
+spherical harmonics: <span class="math display">$$\Delta T(\theta, \phi)
+= \sum_{\ell=0}^{\infty} \sum_{m=-\ell}^{\ell} a_{\ell m} Y_{\ell
+m}(\theta, \phi)$$</span> Here, <span
+class="math inline"><em>Y</em><sub>ℓ<em>m</em></sub></span> are the
+spherical harmonics, and <span
+class="math inline"><em>Δ</em><em>T</em>(<em>θ</em>, <em>ϕ</em>)</span>
+represents the temperature fluctuations as a function of the angles
+<span class="math inline"><em>θ</em></span> and <span
+class="math inline"><em>ϕ</em></span>. The <span
+class="math inline"><em>C</em><sub>ℓ</sub></span> spectrum encodes
+information about the spatial distribution of temperature fluctuations
+on the CMB sky, with peaks corresponding to characteristic angular
+scales. For instance, the first peak at low <span
+class="math inline">ℓ</span> values corresponds to the largest scales in
+the universe, while subsequent peaks represent smaller scales associated
+with acoustic oscillations in the primordial plasma.</p>
+
+
+
+  </div>
+</div>
+
+<div class="w3-container" id="about">
+  <div class="w3-content" style="max-width:700px">
+    <h1 class="w3-center w3-padding-64" id="minkowski-functionals-and-morphological-analysis"><span class="w3-tag w3-wide">Minkowski
+      Functionals</span></h1>
+
+<figure id="figp">
+<img src="figures/Screenshot from 2024-04-24 22-49-48.png"
+style="width:100%;max-width:1000px;margin-top:32px;" />
+<figcaption>The Minkowski functionals as per reference <span
+class="citation" data-cites="paper1"></span></figcaption>
+</figure>
+<p>Inflationary theories predict Gaussian density perturbations,
+manifesting as the Gaussianity of CMB temperature fluctuations. However,
+deviations from Gaussianity could indicate alternative mechanisms, such
+as topological defects. Even initially, Gaussian fluctuations may
+acquire non-Gaussian features due to weak gravitational lensing or
+astrophysical foregrounds, especially in high-resolution maps from
+missions like MAP and PLANCK. Establishing the Gaussian nature of CMB
+signals is vital for both probing inflationary models and optimizing
+power spectrum estimation techniques.</p>
+<p>Standard tests for non-Gaussianity, like <span
+class="math inline"><em>m</em></span>-point correlation functions, with
+computational complexity scaling as <span
+class="math inline"><em>O</em>(<em>N</em><sup><em>m</em></sup>)</span>,
+become prohibitively expensive for large datasets. Hence, there’s a need
+for efficient statistical tools sensitive to non-Gaussianity, such as
+Minkowski Functionals (MFs), which are of order <span
+class="math inline"><em>O</em>(<em>N</em>)</span>.</p>
+<p>MFs, expressed as surface integrals over the whole sphere, offer
+insights into the morphological characteristics of CMB temperature maps.
+They measure features like the total area of excursion regions enclosed
+by temperature contours, total contour length, and genus, providing a
+novel approach for CMB data analysis. In previous studies, these
+functionals demonstrated sensitivity to non-Gaussian behavior. A good
+discussion on the mathematical framework of these equations can be found
+in <span class="citation" data-cites="Chingangbam_etal_2017"></span> and
+<span class="citation" data-cites="Monteserin2005"></span>.</p>
+<p><span
+class="math display"><em>V</em><sub><em>j</em></sub>(<em>Q</em><sub><em>ν</em></sub>) = ∫<sub>𝒮<sup>2</sup></sub>(<em>d</em><em>a</em><em>I</em><sub><em>j</em></sub>)</span>
+From this, the Minkowski functionals are defined as: <span
+class="math display">$$v_j(Q_\nu) = \frac{V_j(Q_\nu)}{4\pi R^2}$$</span>
+We normalize this with a total number of pixels, <span
+class="math inline"><em>ν</em></span> is the temperature threshold, and
+<span class="math inline"><em>u</em></span> is the field we are dealing
+with. <span class="math display">$$\begin{aligned}
+    I_0 &amp;= \Theta(u-v) \\
+    I_1 &amp;= \delta(u-v) \frac{\sqrt{u_1^2 + u_2^2}}{4} \\
+    I_2 &amp;= \frac{1}{2\pi} \delta(u-v) \frac{2u_1u_2u_{12} -
+u_1^2u_{22} - u_2^2u_{11}}{u_1^2 + u_2^2}
+\end{aligned}$$</span> Here <span
+class="math inline"><em>u</em><sub>1</sub></span> and <span
+class="math inline"><em>u</em><sub>11</sub></span> are the first and
+second derivative of <span class="math inline"><em>θ</em></span>,
+similarly <span class="math inline"><em>u</em><sub>2</sub></span> and
+<span class="math inline"><em>u</em><sub>22</sub></span> of <span
+class="math inline"><em>ϕ</em></span>, <span
+class="math inline"><em>u</em><sub>12</sub></span> is the mixed
+derivative. Refer to <span class="citation" data-cites="paper1"></span>
+for more details on these equations. Additionally, an analytic
+expression exists for perfect Gaussian distributions, facilitating the
+direct computation of MFs from known statistics like the power spectrum
+and bypassing computationally expensive simulations. This approach
+enhances the efficiency and significance of morphological analysis in
+understanding CMB data. The analytic expression only needs details of
+<span class="math inline"><em>C</em><sub><em>l</em></sub></span> and
+<span class="math inline"><em>l</em></span> to function, as defined
+below. The Minkowski functions constructed using these expressions are
+provided in figure <a href="#figp" data-reference-type="ref"
+data-reference="figp">3</a>. <span
+class="math display">$$\begin{aligned}
+    v_0(v) &amp;= \frac{1}{2} - \frac{1}{2}
+\sigma\left(\frac{v-\mu}{(2\sigma)^{1/2}}\right) \\
+    v_1(v) &amp;= \frac{\tau^{1/2}}{8(2\sigma)^{1/2}}
+\exp\left(-\frac{(v-\mu)^2}{2\sigma}\right) \\
+    v_2(v) &amp;= \frac{\tau}{2\pi^{3/2}(2\sigma)^{1/2}}
+\left(\frac{v-\mu}{(2\sigma)^{1/2}}\right)
+\exp\left(-\frac{(v-\mu)^2}{2\sigma}\right)
+\end{aligned}$$</span></p>
+<p><span class="math display">$$\begin{aligned}
+    {\sigma}^2 &amp;= {{\sum_{l=1}^{\infty} (2l + 1)C_{l}}} \\
+    \tau &amp;= {{\sum_{l=1}^{\infty} (2l + 1)C_{l}}}\frac{l(l+1)}{2}
+\end{aligned}$$</span></p>
+<h2 id="data-and-implementation">Data and implementation</h2>
+<p>The analysis utilized the WMAP 9-year dataset from the Lambda
+website, provided in a <code>.fits</code> file format. Healpy software
+facilitated direct processing of this file, with the resolution
+determined by the NSIDE parameter. Initially set at 512, the data was
+downgraded to 128 for subsequent analysis. The data utilized RING
+ordering. For additional details regarding NSIDE and ordering, refer to
+the appendix (<a href="#appen" data-reference-type="ref"
+data-reference="appen">5</a>). All skymaps presented here are in
+Galactic coordinate projection.<br />
+First, the mollviede projection map is made, and then we plotted the
+power spectrum. Next, we calculated the derivatives of each point. For
+this, we need to convert the map data into spherical harmonics, then
+take the derivatives, and again convert this to map data. These were
+done using specialised healpy functions.<br />
+Now we have all the information to calculate the Minkowski functionals.
+We plotted a histogram of the normalized pixel values, which have a
+range from -4 to +4. Thus, we have 32 bins of 0.25<span
+class="math inline"><em>m</em><em>K</em></span> size. This histogram has
+information on the distribution of pixels; the minimum x value of each
+bin is the threshold. While calculating the Minkowski functionals, we
+set the pixels in that particular bin as 1 and the rest of them as 0(In
+the masked WMAP data case, this means dealing with two masks
+simultaneously. Logical operations from the numpy library were used for
+this).<br />
+With an aim to reduce the noise, we applied a galactic cut on the
+skymap(see figure <a href="#fig:masked_moll" data-reference-type="ref"
+data-reference="fig:masked_moll">[fig:masked_moll]</a>). This is because
+we expect the maximum noise to originate from the galactic plane. In
+this case, we used a 10<span class="math inline"><sup>∘</sup></span> cut
+on both sides of the equator. But this does not bring forth any
+significant changes as we expected, although the power spectrum did get
+better(comparing figures <a href="#fig:pow_spec_no_mask"
+data-reference-type="ref"
+data-reference="fig:pow_spec_no_mask">[fig:pow_spec_no_mask]</a> and <a
+href="#fig:powspecmask" data-reference-type="ref"
+data-reference="fig:powspecmask">[fig:powspecmask]</a>). The same
+analysis as we did for the unmasked cases is done here, too; the results
+are in figures <a href="#nomaskminkdata" data-reference-type="ref"
+data-reference="nomaskminkdata">4</a> and <a href="#minkmaskdata"
+data-reference-type="ref" data-reference="minkmaskdata">5</a>. The codes
+used for this project are uploaded on <a
+href="https://github.com/gayathri2011067/P452_Computational-Physics/blob/main/Term%20paper%20final%20folder/new%20code.ipynb">GitHub</a>.</p>
+<div class="figure*">
+<p><img src="figures/moll_no-mask.png"  style="width:100%;max-width:1000px;margin-top:32px;"/></p>
+<p><img src="figures/molllllllll.png"  style="width:100%;max-width:1000px;margin-top:32px;"/></p>
+<p><img src="figures/pow_spec_no_mask.png"  style="width:100%;max-width:1000px;margin-top:32px;"/></p>
+<p><img src="figures/powspecmask.png"  style="width:100%;max-width:1000px;margin-top:32px;"/></p>
+<p><img src="figures/hist_nomask.png"  style="width:100%;max-width:1000px;margin-top:32px;"/></p>
+<p><img src="figures/hist_masked.png"  style="width:100%;max-width:1000px;margin-top:32px;"/></p>
+</div>
+<div class="figure*">
+<figure id="nomaskminkdata">
+<img src="figures/nomaskdata.png"  style="width:100%;max-width:1000px;margin-top:32px;"/>
+<figcaption>Minkowski functionals calculated for the unmasked data. They
+are normalized with the total number of pixels 196608. The threshold is
+temperature with units of <span
+class="math inline"><em>m</em><em>K</em></span></figcaption>
+</figure>
+<figure id="minkmaskdata">
+<img src="figures/maskdatafff.png"  style="width:100%;max-width:1000px;margin-top:32px;"/>
+<figcaption>Minkowski functionals calculated for the data after galactic
+cut. They are normalized with the total number of pixels, 162304. The
+threshold is temperature with units of <span
+class="math inline"><em>m</em><em>K</em></span></figcaption>
+</figure>
+</div>
+<h2 id="simulation">Simulation</h2>
+<p>Simulated maps of the cosmic microwave background (CMB) is generated
+by using some properties of healpy. The generated maps will be Gaussian
+and will have the same NSIDE as our data,128. The process of this
+simulation is explained below.</p>
+<ol>
+<li><p>Input Power Spectrum: A power spectrum is provided as the input,
+i.e., the <span
+class="math inline"><em>C</em><sub><em>l</em></sub></span> value from
+our unmasked sky map.</p></li>
+<li><p>Random Phases: <code>synfast</code> function is healpy‘ generates
+random phases for each multipole moment. These phases determine the
+relative alignment of the signal across the sky. By assigning random
+phases, we introduce realistic fluctuations into the simulated map,
+mimicking the randomness observed in real CMB or other spherical
+signals.</p></li>
+<li><p>Inverse Fourier Transform: An inverse Fourier transform is done
+on the provided power spectrum and random phases to generate the
+simulated map in real space (or pixel space). This involves converting
+the signal from its frequency-domain representation (given by the power
+spectrum) to its spatial-domain representation (the map).</p></li>
+<li><p>Pixelization: The simulated map is pixelized onto a grid covering
+the sphere.</p></li>
+<li><p>Output: Finally, a synthetic map is returned as a Healpix map
+object, which can be further analyzed or visualized.</p></li>
+<li><p>On this map, we do both masked and unmasked analysis. A 10<span
+class="math inline"><sup>∘</sup></span> galactic cut is similar to what
+we did for data is done here, too, for masked analysis.</p></li>
+<li><p>Then, the Minkowski functionals are calculated using the same
+functions we defined for data. The outputs of the simulations are
+provided in figures <a href="#simunomaskminkdata"
+data-reference-type="ref" data-reference="simunomaskminkdata">6</a> and
+<a href="#simuminkmaskdata" data-reference-type="ref"
+data-reference="simuminkmaskdata">7</a>.</p></li>
+</ol>
+<p>One challenge here is the run time; 32 bins and 1000 realizations
+mean we are dealing with 1000<span class="math inline">×</span>32
+arrays, that too, three per simulation. We also saved each value of
+<span class="math inline"><em>C</em><sub><em>l</em></sub></span>
+generated and maps’ mean and standard deviation. This increases the time
+complexity and computational cost. The following steps were taken to
+optimize these:</p>
+<ol>
+<li><p>In the calculation of <span
+class="math inline"><em>I</em><sub>0</sub></span> functional, cumulative
+data is needed. Thus, if we do that operation from the beginning of the
+array, the time complexity is of <span
+class="math inline"><em>O</em>(<em>N</em><sup>2</sup>)</span>. Instead,
+we calculate it in each bin, which will be <span
+class="math inline"><em>O</em>(<em>N</em>)</span>, and then save the
+cumulative from the end of the array, again <span
+class="math inline"><em>O</em>(<em>N</em>)</span>. Thus, we will only
+deal with <span class="math inline"><em>O</em>(<em>N</em>)</span>. This
+change greatly reduced computation time.</p></li>
+<li><p>We initialized the plots at the beginning and then plotted each
+point as it was generated, but since we still saved each data in each
+iteration, this step was ineffective in reducing the time.</p></li>
+<li><p>The total time the simulation ran was 4.5 hours after
+implementing these steps.</p></li>
+</ol>
+<div class="figure*">
+<figure id="simunomaskminkdata">
+<img src="figures/nomasksimu.png"  style="width:100%;max-width:1000px;margin-top:32px;"/>
+<figcaption>The simulated Minkowski functionals for a synthetic Gaussian
+map, over 1000 realizations. The NSIDE of this simulated mask is also
+128. The functionals are normalized with the total number of pixels,
+196608. The threshold is temperature with units of <span
+class="math inline"><em>m</em><em>K</em></span></figcaption>
+</figure>
+<figure id="simuminkmaskdata">
+<img src="figures/SIMMASK.png"  style="width:100%;max-width:1000px;margin-top:32px;"/>
+<figcaption>The simulated Minkowski functionals for a synthetic Gaussian
+map, over 1000 realizations. Here, we applied the same galactic cut as
+the one used for the WMAP data. The NSIDE of this simulated mask is also
+128. The functionals are normalized with the total number of pixels,
+196608. The threshold is temperature with units of <span
+class="math inline"><em>m</em><em>K</em></span></figcaption>
+</figure>
+</div>
+
+  </div>
+</div>
+
+
+<div class="w3-container" id="about">
+  <div class="w3-content" style="max-width:700px">
+    <h1 class="w3-center w3-padding-64" id="statistical-analysis"><span class="w3-tag w3-wide">Statistical analysis</span></h1>
+
+<h2 id="finding-the-slight-non-gaussianity">Finding the slight
+non-Gaussianity</h2>
+<p>In a normal distribution, about 68<span class="math inline">%</span>
+of the data falls within one standard deviation (<span
+class="math inline">±<em>σ</em></span>) of the mean, about 95<span
+class="math inline">%</span> falls within two standard deviations (<span
+class="math inline">±2<em>σ</em></span>), and about 99.7<span
+class="math inline">%</span> falls within three standard deviations
+(<span class="math inline">±3<em>σ</em></span>). When we refer to a
+3<span class="math inline"><em>σ</em></span> confidence limit, we mean
+that we are considering a range of values that spans three standard
+deviations from the mean. In other words, we are looking at a range that
+includes approximately 99.7<span class="math inline">%</span> of the
+data if it were normally distributed.<br />
+Thus if the data falls outside the 3<span
+class="math inline"><em>σ</em></span> confidence limit, it suggests that
+the observed values are unlikely to occur by random chance alone if the
+data were indeed normally distributed. This deviation from the expected
+range may indicate the presence of non-Gaussian behavior in the dataset.
+Conversely, if the data falls within this range, it suggests that the
+observed values are consistent with what we would expect from a normally
+distributed dataset.<br />
+We concluded that the unmasked data have a slight non-gaussianity
+because it did not come within the 3<span
+class="math inline"><em>σ</em></span> confidence range of perfectly
+Gaussian simulated results. The plots from which we can conclude this
+are given in figures <a href="#3" data-reference-type="ref"
+data-reference="3">[3]</a>,<a href="#4" data-reference-type="ref"
+data-reference="4">[4]</a>,<a href="#5" data-reference-type="ref"
+data-reference="5">[5]</a>, and <a href="#6" data-reference-type="ref"
+data-reference="6">[6]</a>(in all cases, the x-axis is in units of <span
+class="math inline"><em>m</em><em>K</em></span>). A similar analysis is
+done in <span class="citation"
+data-cites="pranav2023homology"></span>.</p>
+<div class="figure*">
+<p><img src="figures/3sigmaunmasked.png"  style="width:100%;max-width:1000px;margin-top:32px;"/></p>
+<p><img src="figures/3sigma_masked.png"  style="width:100%;max-width:1000px;margin-top:32px;"/></p>
+<p><img src="figures/3sigmaunmaskgauss.png"  style="width:100%;max-width:1000px;margin-top:32px;"/></p>
+<p><img src="figures/3sigmagaussmasked.png"  style="width:100%;max-width:1000px;margin-top:32px;"/></p>
+</div>
+<h2 id="fitting-with-analytic-expression">Fitting with analytic
+expression</h2>
+<p>Next, we fit the simulations and data with the analytic function for
+Minkowski functionals of a Gaussian field. The simulations fit
+perfectly. This means that for a Gaussian field, we do not need to do
+simulations for analysis, given the power spectrum (<span
+class="math inline"><em>C</em><sub><em>l</em></sub></span>) and
+multipole moment (<span class="math inline"><em>l</em></span>), we can
+directly get the Minkowski functionals from that, skipping all the steps
+in between like taking derivatives. Thus, we prove the validity and
+significance of analytic expressions Next, we tried fitting data before
+and after masking with the analytic plot. The expected result was that
+the unmasked data would give a bad fit, but on the contrary, masked and
+unmasked gave a similar fit. I tried performing a few goodness-of-fit
+tests, but they were inconclusive. The fits are given in figures <a
+href="#fitminkmaskdata" data-reference-type="ref"
+data-reference="fitminkmaskdata">11</a> and <a href="#fitnomaskminkdata"
+data-reference-type="ref" data-reference="fitnomaskminkdata">10</a>.</p>
+<div class="figure*">
+<figure id="fitnomaskminksim">
+<img src="figures/fit_unmask_sim.png"  style="width:100%;max-width:1000px;margin-top:32px;"/>
+<figcaption>Fitting of unmasked simulation with the analytic expression
+for Minkowski functionals. The grey line is the simulation, and the red
+line is the analytic expression. The threshold is temperature with units
+of <span class="math inline"><em>m</em><em>K</em></span></figcaption>
+</figure>
+<figure id="fitminkmasksim">
+<img src="figures/fit_mask_sim.png"  style="width:100%;max-width:1000px;margin-top:32px;"/>
+<figcaption>Fitting of masked simulation with the analytic expression
+for Minkowski functionals. The grey line is the simulation, and the red
+line is the analytic expression. The threshold is temperature with units
+of <span class="math inline"><em>m</em><em>K</em></span></figcaption>
+</figure>
+</div>
+<div class="figure*">
+<figure id="fitnomaskminkdata">
+<img src="figures/data_fit_nomask.png"  style="width:100%;max-width:1000px;margin-top:32px;"/>
+<figcaption>Fitting of unmasked data with the analytic expression for
+Minkowski functionals. The grey line is the data, and the red line is
+the analytic expression. The threshold is temperature with units of
+<span class="math inline"><em>m</em><em>K</em></span></figcaption>
+</figure>
+<figure id="fitminkmaskdata">
+<img src="figures/data_fit_mask.png"  style="width:100%;max-width:1000px;margin-top:32px;"/>
+<figcaption>Fitting of masked data with the analytic expression for
+Minkowski functionals. The grey line is the data, and the red line is
+the analytic expression. The threshold is temperature with units of
+<span class="math inline"><em>m</em><em>K</em></span></figcaption>
+</figure>
+</div>
+
+
+  </div>
+</div>
+<div class="w3-container" id="about">
+  <div class="w3-content" style="max-width:700px">
+
+    <h1 class="w3-center w3-padding-64" id="results-and-conclusions"><span class="w3-tag w3-wide">Results and Conclusions</span></h1>
+
+<ul>
+<li><p>Our analysis begins with exploring the Minkowski functionals
+(MFs) applied to cosmic microwave background (CMB) maps, utilizing both
+real observational data and simulated maps. Key visualizations,
+including mollweide projections, power spectra, and histograms of pixel
+values, are depicted in Figures <a href="#fig:moll_no-mask"
+data-reference-type="ref"
+data-reference="fig:moll_no-mask">[fig:moll_no-mask]</a>, <a
+href="#fig:masked_moll" data-reference-type="ref"
+data-reference="fig:masked_moll">[fig:masked_moll]</a>, <a
+href="#fig:pow_spec_no_mask" data-reference-type="ref"
+data-reference="fig:pow_spec_no_mask">[fig:pow_spec_no_mask]</a>, <a
+href="#fig:powspecmask" data-reference-type="ref"
+data-reference="fig:powspecmask">[fig:powspecmask]</a>, <a
+href="#fig:hist_nomask" data-reference-type="ref"
+data-reference="fig:hist_nomask">[fig:hist_nomask]</a>, and <a
+href="#fig:hist_masked" data-reference-type="ref"
+data-reference="fig:hist_masked">[fig:hist_masked]</a>. Implementing a
+galactic cut and masking procedures reduces noise levels, although the
+overall morphology remains largely consistent.</p></li>
+<li><p>Subsequently, we simulated 1000 synthetic maps to analyze the
+corresponding Minkowski functionals, representing the most
+computationally challenging aspect of this study. 1000 realization
+simulations were done to generate masked and unmasked maps.</p></li>
+<li><p>Statistical analyses were then conducted to assess the
+Gaussianity of the CMB signals. By comparing the Minkowski functionals
+of real CMB data with those of simulated Gaussian maps, slight
+deviations from Gaussian behavior were observed in the unmasked data.
+Figures <a href="#3" data-reference-type="ref"
+data-reference="3">[3]</a>, <a href="#4" data-reference-type="ref"
+data-reference="4">[4]</a>, <a href="#5" data-reference-type="ref"
+data-reference="5">[5]</a>, and <a href="#6" data-reference-type="ref"
+data-reference="6">[6]</a> demonstrate how the unmasked data falls
+beyond the 3<span class="math inline"><em>σ</em></span> confidence
+limit, indicating non-Gaussian behavior. Conversely, masked data
+strongly agreed with simulated Gaussian maps, suggesting a higher degree
+of Gaussianity</p></li>
+<li><p>An important finding of our study is that the analytic expression
+available in the literature accurately encodes the Minkowski functionals
+for a Gaussian distribution. This revelation simplifies the analysis
+process significantly, eliminating the need for repetitive derivations
+of masks and simulations. Consequently, the Minkowski functionals become
+an even more powerful tool for analyzing CMB maps.</p></li>
+<li><p>Furthermore, we conducted fitting procedures for both simulated
+and real data using analytic expressions for the Minkowski functionals
+of a Gaussian field. While the simulated data exhibited excellent fits,
+discrepancies were observed in the unmasked real data, as shown in
+Figures <a href="#fitnomaskminkdata" data-reference-type="ref"
+data-reference="fitnomaskminkdata">10</a> and <a
+href="#fitnomaskminksim" data-reference-type="ref"
+data-reference="fitnomaskminksim">8</a>. Surprisingly, similar fitting
+results were obtained for the masked real data, contrary to initial
+expectations.</p></li>
+</ul>
+
+
+
+  </div>
+</div>
+<div class="w3-container" id="about">
+  <div class="w3-content" style="max-width:700px">
+    <h1 class="w3-center w3-padding-64" id="appen"><span class="w3-tag w3-wide">HEALPix software and healpy</span></h1>
+
+
+<p>HEALPix(short for Hierarchical Equal Area isoLatitude Pixelization)
+is a sophisticated scheme that handles pixelated data on the celestial
+sphere efficiently. Developed initially to analyze cosmic microwave
+background (CMB) data from cosmological experiments, Healpix has become
+indispensable across various branches of astrophysics, especially for
+all-sky surveys.</p>
+<p>Healpix partitions the sphere hierarchically into curvilinear
+quadrilaterals. Starting with 12 base pixels, the resolution increases
+as each pixel divides into four new ones. This hierarchical tessellation
+ensures that areas of all pixels at a given resolution are equal.
+Additionally, pixels are distributed along the lines of constant
+latitude, facilitating harmonic analysis applications involving
+spherical harmonics .<br />
+A Healpix tessellation is defined by a parameter known as NSIDE, which
+represents the resolution of the pixelization. NSIDE must have a
+positive power of 2. This parameter determines the number of pixels,
+denoted as N, in the maps generated by the tessellation. The
+relationship between NSIDE and the number of pixels, N, is given by the
+equation <span
+class="math inline"><em>N</em> = 12 × <em>N</em><em>S</em><em>I</em><em>D</em><em>E</em><sup>2</sup></span>.
+Essentially, NSIDE controls how finely the sphere is divided into
+pixels. A higher NSIDE value results in more pixels and, thus, a finer
+resolution of the pixelization. Conversely, a lower NSIDE value leads to
+fewer pixels and a coarser resolution. This parameter plays a crucial
+role in determining the level of detail in the analysis of spherical
+data, such as cosmic microwave background maps .<br />
+Healpix supports two different ordering schemes, RING or NESTED. By
+default, healpy maps are in RING ordering. First, in the RING scheme,
+one can simply count the pixels moving down from the north to the south
+pole along each iso-latitude ring. It is in the RING scheme that Fourier
+transforms with spherical harmonics, which are easy to implement.
+Second, in the NESTED scheme, one can arrange the pixel indices in
+twelve tree structures corresponding to base-resolution pixels. The
+mollviede projections of RING and NESTED ordering is given in figures <a
+href="#ring" data-reference-type="ref" data-reference="ring">12</a> and
+<a href="#nested" data-reference-type="ref"
+data-reference="nested">13</a>.</p>
+<div class="figure*">
+<figure id="ring">
+<img src="figures/ringmoll_nside32_ring.png"  style="width:100%;max-width:1000px;margin-top:32px;"/>
+<figcaption>RING ordering in mollview.</figcaption>
+</figure>
+<figure id="nested">
+<img src="figures/nestedtutorial_20_0.png"  style="width:100%;max-width:1000px;margin-top:32px;"/>
+<figcaption>NESTED ordering in mollview.</figcaption>
+</figure>
+</div>
+<p>Healpy is a Python package built upon the Healpix scheme, which
+provides a comprehensive set of utilities for handling pixelated data on
+the sphere. It offers functionalities such as:</p>
+<ol>
+<li><p>Conversion between sky coordinates and pixel indices in nested
+and ring schemes.</p></li>
+<li><p>Identification of pixels within specific regions of the sky, like
+disks, polygons, or strips.</p></li>
+<li><p>Coordinate transformations between different reference frames
+(Galactic, Ecliptic, Equatorial).</p></li>
+<li><p>Reading and writing HEALPix maps to disk in FITS format.</p></li>
+<li><p>Visualization of maps in various projections, including
+Mollweide, Gnomonic, and Cartographic.</p></li>
+<li><p>Computation of Auto and Cross Power Spectra from maps.</p></li>
+</ol>
+  </div>
+</div>
+
+<div class="w3-container" id="about">
+  <div class="w3-content" style="max-width:700px">
+    <h1 class="w3-center w3-padding-64" id="ref"><span class="w3-tag w3-wide">References</span></h1>
+
+
+<ol>
+<li><p><a href="https://doi.org/10.1111/j.1365-2966.2005.09025.x">
+  Monteserín, C., Barreiro, R. B., Sanz, J. L., & Martínez-González, E. 2005,
+  Monthly Notices of the Royal Astronomical Society, 360, 9
+</a>
+</p></li>
+<li><p><a href="https://doi.org/10.1046/j.1365-8711.1998.01467">
+  Schmalzing, J., & Górski, K. M. 1998, Monthly Notices of the Royal Astronomical Society, 297, 355
+</a>
+</p></li>
+<li><p><a href="https://doi.org/10.1016/j.physletb.2017.05.030">
+  Chingangbam, Pravabati, Ganesan, Vidhya, Yogendran, K. P., & Park, Chan. (2017). "Title." Physics Letters B, 771, 67. doi: <span>10.1016/j.physletb.2017.05.030</span>.
+</p></li>
+<li><p><a href="https://arxiv.org/abs/2308.10738">
+  Pranav, P., & Buchert, T. (2023). "Homology reveals significant anisotropy in the cosmic microwave background." arXiv preprint arXiv:2308.10738.
+</p></li>
+
+</ol>
+  </div>
+</div>
+
+</body>
+</html>
