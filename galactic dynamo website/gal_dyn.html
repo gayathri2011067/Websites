@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Galactic dynamo term paper</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+  /* Style for the container */
+  .subfigures {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0;
+  }
+  /* Style for each subfigure */
+  .subfigure {
+      flex: 1;
+      text-align: center;
+  }
+  .subfigure img {
+      width: 100%;
+      max-width: 200px; /* Adjust as needed */
+      height: auto;
+  }
+  .subfigure figcaption {
+      font-style: italic;
+  }
+</style>
+<style>
+  /* Container for figures and text */
+  .container {
+      display: flex;
+      flex-wrap: wrap;
+  }
+  /* Style for figures */
+  .figure {
+      flex: 0 0 auto;
+      padding: 10px; /* Adjust padding as needed */
+      box-sizing: border-box;
+  }
+  .figure img {
+      max-width: 100%; /* Adjust maximum width */
+      height: auto;
+  }
+  /* Style for text */
+  .text {
+      flex: 1;
+      font-size: 16px;
+      line-height: 1.6;
+  }
+</style>
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+}
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url("figures/10-captivating-facts-about-galactic-magnetic-fields-1692782059.jpg");
+  min-height: 100%;
+}
+
+.menu {
+  display: none;
+}
+</style>
+
+</head>
+<body>
+
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-col s2">
+      <a href="#" class="w3-button w3-block w3-black">HOME</a>
+    </div>
+    <div class="w3-col s2">
+      <a href="#about" class="w3-button w3-block w3-black">ABOUT</a>
+    </div>
+   <div class="w3-col s2">
+      <a href="#task1" class="w3-button w3-block w3-black">CHECKPOINT 1</a>
+    </div>
+    <div class="w3-col s2">
+      <a href="#task2" class="w3-button w3-block w3-black">CHECKPOINT 2</a>
+    </div>
+    <div class="w3-col s2">
+      <a href="#task3" class="w3-button w3-block w3-black">MAIN PROJECT</a>
+    </div>
+    <div class="w3-col s2">
+        <a href="#menu" class="w3-button w3-block w3-black">REFERENCES</a>
+      </div>
+  </div>
+</div>
+
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+    <span class="w3-tag">P464 MHD Computation Project</span>
+  </div>
+  <div class="w3-display-middle w3-center">
+    <span class="w3-text-black" style="font-size:90px">GALACTIC<br>DYNAMOS</span>
+  </div>
+  <div class="w3-display-bottomright w3-center w3-padding-large">
+    <span class="w3-text-white">Done by Gayathri K,2011067</span>
+  </div>
+</header>
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-sand w3-grayscale w3-large">
+
+
+<!-- About Container -->
+<div class="w3-container" id="about">
+  <div class="w3-content" style="max-width:700px">
+      <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">ABOUT THE PROJECT</span></h5>
+      <p>This project investigates the dynamics of magnetic fields within galaxies, focusing on the principles of galactic dynamo theory. Dynamo theory elucidates the mechanisms responsible for the sustained generation and evolution of magnetic fields over cosmic timescales.</p>
+      <p>Through computational simulations and analysis, we explore the interplay between fluid motion and magnetic energy, utilizing Python programming language to solve the governing equations of magnetohydrodynamics (MHD). Specifically, our simulations delve into kinematic dynamos within galaxies, examining phenomena such as differential rotation, turbulence, and magnetic field amplification.</p>
+                
+
+  </div>
+</div>
+
+      <!-- End Subcontainer: Kinematic Dynamos in Galaxies -->
+  </div>
+</div>
+
+<div class="w3-container" id="meth">
+  <div class="w3-content" style="max-width:700px">
+      <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">NUMERICAL METHODS</span></h5>
+      <p>This project focuses on computational simulations of galactic dynamos, exploring the intricate dynamics of magnetic fields within galaxies. Using Python, the equations governing magnetohydrodynamics (MHD) are solved to understand how magnetic fields evolve and interact with the surrounding astrophysical environment. By analyzing the results obtained from these simulations, insights can be gained into generating and maintaining magnetic fields in galaxies. The project includes detailed documentation, including Jupyter notebooks hosted on GitHub, and a comprehensive project report in PDF format.</p>
+      <p>I have to solve the equations in R. The codes are written in Python. More details on the codes I implemented are Given in the following sections.</p>
+    
+      <!-- Subcontainer: Kinematic Dynamos in Galaxies -->
+      <div class="subcontainer">
+        <h2>Using ghost zones for boundary conditions</h2>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <p>In computational physics and engineering, especially in simulations involving partial differential equations (PDEs), boundary conditions play a crucial role in defining the behavior of the system at the boundaries of the computational domain. One common approach to implementing boundary conditions is through the use of ghost zones or ghost cells.</p>
+<h3>Concept:</h3>
+<p>The idea behind ghost zones is to extend the computational domain by adding additional grid points adjacent to the boundaries. These additional grid points, called ghost cells or ghost zones, are used to enforce boundary conditions without directly affecting the original domain.</p>
+<h3>Implementation:</h3>
+<p>When implementing ghost zones, the values of variables at the ghost cells are typically determined based on the specified boundary conditions. These values act as placeholders and are updated iteratively during the simulation to maintain consistency with the boundary conditions.</p>
+<h3>Types of Boundary Conditions:</h3>
+<p>Ghost zones can be used to implement various types of boundary conditions, including:</p>
+<ul>
+  <li><strong>Dirichlet Boundary Conditions:</strong> In this case, the values at the ghost cells are set to specific prescribed values.</li>
+  <li><strong>Neumann Boundary Conditions:</strong> Here, the values at the ghost cells are determined based on the derivative of the solution at the boundary.</li>
+  <li><strong>Periodic Boundary Conditions:</strong> For periodic domains, the values at the ghost cells are obtained by wrapping around the values from the opposite boundary.</li>
+  <li><strong>Robin Boundary Conditions:</strong> These conditions involve a combination of Dirichlet and Neumann conditions, where the values at the ghost cells are determined by a linear combination of the solution and its derivative at the boundary.</li>
+</ul>
+<h3>Advantages:</h3>
+<p>Using ghost zones for boundary conditions offers several advantages:</p>
+<ul>
+  <li>It allows for a consistent and systematic treatment of boundary conditions across different types of simulations.</li>
+  <li>It enables the use of standard numerical methods within the computational domain without modification.</li>
+  <li>It facilitates parallelization and optimization strategies by maintaining a regular grid structure.</li>
+</ul>
+<p>Overall, ghost zones provide a flexible and efficient framework for incorporating boundary conditions in computational simulations, making them essential in various fields of scientific computing.</p>
+       
+      <div class="subcontainer">
+          <h2>6th order finite differencing</h2>
+          <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+          <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+          </head>
+          <body>
+       
+          <p>The 6th order finite difference approximation for the second derivative \( f'' \) of a function \( f(x) \) is given by:</p>
+          <blockquote>
+          \[ f''(x) \approx \frac{-f(x + 3h) + 9f(x + 2h) - 45f(x + h) + 45f(x - h) - 9f(x - 2h) + f(x - 3h)}{h^2} \]
+          </blockquote>
+          <p>Similarly, the 6th order finite difference approximation for the first derivative \( f' \) of a function \( f(x) \) is:</p>
+          <blockquote>
+          \[ f'(x) \approx \frac{-\frac{1}{60}f(x + 3h) + \frac{3}{20}f(x + 2h) - \frac{3}{4}f(x + h) + \frac{3}{4}f(x - h) - \frac{3}{20}f(x - 2h) + \frac{1}{60}f(x - 3h)}{h} \]
+          </blockquote>
+          <p>Where \( h \) is the step size between the discrete points.</p>
+      </div>
+      <div class="subcontainer">
+        <h2>4th order Runge-Kutta methods</h2>
+        <p>The Runge-Kutta 4th order (RK4) method is a numerical technique used to solve ordinary differential equations (ODEs). It provides a balance between accuracy and computational complexity, making it one of the most popular methods for solving ODEs numerically.</p>
+
+<p>The general form of the RK4 method for solving an initial value problem with a first-order ODE is:</p>
+<blockquote>
+\[ y_{n+1} = y_n + \frac{h}{6}(k_1 + 2k_2 + 2k_3 + k_4) \]
+</blockquote>
+<p>Where:</p>
+<ul>
+<li>\( y_n \) is the approximation of the solution at time \( t_n \).</li>
+<li>\( h \) is the step size.</li>
+<li>\( k_1, k_2, k_3, \) and \( k_4 \) are slopes determined at different points using the function \( f(t, y) \) representing the ODE.</li>
+</ul>
+<p>The algorithm is as follows:</p>
+<ol>
+<li>Compute \( k_1 \) using the function \( f(t_n, y_n) \).</li>
+<li>Compute \( k_2 \) using the function \( f(t_n + \frac{h}{2}, y_n + \frac{h}{2}k_1) \).</li>
+<li>Compute \( k_3 \) using the function \( f(t_n + \frac{h}{2}, y_n + \frac{h}{2}k_2) \).</li>
+<li>Compute \( k_4 \) using the function \( f(t_n + h, y_n + hk_3) \).</li>
+<li>Update the solution \( y_{n+1} \) using the weighted average of the slopes \( k_1, k_2, k_3, \) and \( k_4 \).</li>
+</ol>
+<p>The RK4 method offers relatively high accuracy compared to simpler methods like Euler's method, making it suitable for a wide range of applications in science and engineering.</p>
+
+    </div>
+      <!-- End Subcontai<ner: Kinematic Dynamos in Galaxies -->
+  </div>
+</div>
+  
+  
+  
+  <div class="w3-container" id="task1">
+    <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">TASK 1</span></h5>
+    <h3>Aim</h3>
+
+<p>The aim of this study is to solve the diffusion equation in the radial coordinate \( r \). Our primary objective is to determine the spatial and temporal derivatives of the mean magnetic field components \( \overline{B_r} \) and \( \overline{B_{\phi}} \). Subsequently, we aim to ascertain the mean magnetic field value and employ an exponential decay model to discern the decay constant. Through this investigation, we seek to explore the evolution of the magnetic field magnitude and the exponential decay rate. Furthermore, our analysis extends to examining the spatial solution for \( \overline{B_r} \) and \( \overline{B_{\phi}} \), as well as calculating the pitch angle of the mean magnetic field denoted by \( p \). Additionally, we explore various boundary conditions and seed fields to assess their impact on the obtained results.</p>
+<h3>Equations</h3>
+<p>For this task, we address the diffusion equation while omitting the terms involving \( \nabla \times (\overline{V} \times \overline{B}) \) and \( \alpha \). Consequently, the equations to solve become:</p>
+
+<p>For \( \overline{B_r} \):</p>
+\[ \frac{\partial \overline{B_r}}{\partial t} = \eta_t \left[ \frac{\partial}{\partial r} \left( \frac{1}{r} \frac{\partial}{\partial r}(r \overline{B_r}) \right) + \frac{\partial^2 \overline{B_r}}{\partial z^2} \right] \]
+
+<p>For \( \overline{B_{\phi}} \):</p>
+\[ \frac{\partial \overline{B_{\phi}}}{\partial t} = \eta_t \left[ \frac{\partial}{\partial r} \left( \frac{1}{r} \frac{\partial}{\partial r}(r \overline{B_{\phi}}) \right) + \frac{\partial^2 \overline{B_{\phi}}}{\partial z^2} \right] \]
+
+<p>Since both \( \overline{B_r} \) and \( \overline{B_{\phi}} \) share the same equation form, we generalize it to:</p>
+\[ \frac{\partial \overline{B}}{\partial t} = \eta_t \left[ \frac{\partial}{\partial r} \left( \frac{1}{r} \frac{\partial}{\partial r}(r \overline{B}) \right) + \frac{\partial^2 \overline{B}}{\partial z^2} \right] \]
+
+<p>Under the no-\( z \) approximation, the equations for \( \overline{B_r}(r) \) and \( \overline{B_{\phi}}(r) \) simplify to:</p>
+\[ \frac{\partial \overline{B}}{\partial t} = \eta_t \left[ \frac{\partial^2 \overline{B}}{\partial r^2} + \frac{1}{r} \frac{\partial \overline{B}}{\partial r} - \frac{\overline{B}}{r^2} - \frac{\pi^2}{4 h^2} \overline{B} \right] \]
+
+<p>Expanding the equation yields:</p>
+\[ \frac{\partial \overline{B}}{\partial t} = \eta_t \left[ \frac{\partial^2 \overline{B}}{\partial r^2} + \frac{1}{r} \frac{\partial \overline{B}}{\partial r} - \frac{\overline{B}}{r^2} - \frac{\pi^2}{4 h^2} \overline{B} \right] \]
+
+<p>These are the equations we need to solve for task 1.</p>
+<h3>Method</h3>
+
+<p>The equations we aim to solve take the form:</p>
+\[ \frac{\partial \overline{B_i}}{\partial t} = \eta_t\left(\frac{\partial}{\partial r}\left[\frac{1}{r}\frac{\partial}{\partial r}\left(r\overline{B_i}\right)\right] - \frac{\pi^2 \overline{B_i}}{4h^2}\right)\]
+<p>Here, \(i\) represents both \(r\) and \( \phi \).</p>
+
+<p>A sinusoidal initial condition is imposed on both \( \overline{B_r} \) and \( \overline{B_{\phi}} \). The spatial derivatives were calculated with this initial condition and a radial step size \( dr \). We employed the sixth-order finite differencing method. To ensure accuracy, we extended the computational domain by adding three cells to the left and right sides of the boundary, employing relative anti-symmetric ghost cells enforcing the simplest boundary condition, i.e., 0 on both sides. The output of finite differencing was then utilized in the time derivative function, and we performed RK4 integration.</p>
+
+<p>Subsequently, we changed the initial condition and used it to evolve the \( \overline{B_{\phi}} \) field. The implications of different seed magnetic fields were studied by comparing the time evolution of \( \overline{B_{\phi}} \) and \( \overline{B_r} \).</p>
+
+<p>Once \( \overline{B_{\phi}} \) and \( \overline{B_r} \) are solved for, the pitch angle can be calculated using the formula:</p>
+\[\tan(p) = \frac{\overline{B_r}}{\overline{B_{\phi}}}\]
+<p>where \( -\frac{\pi}{2} < p \leq \frac{\pi}{2} \).</p>
+
+<p>From \( \overline{B_{\phi}} \) and \( \overline{B_r} \), we calculate the total mean magnetic field:</p>
+\[\overline{B} = \sqrt{\overline{B_r}^2 + \overline{B_{\phi}}^2}\]
+
+<p>The time evolution of this field is studied. Subsequently, we fit the values of the field obtained into an exponential decay model. To achieve this, we plot the \( \log_{10} \) values of \( B \) on the \( y \) axis and time on the \( x \) axis; the slope of this plot provides the value of the decay constant. Initially, we plot this for a single \( r \), then we plot a decay constant vs \( r \) plot.</p>
+<h3>Results</h3>
+
+<img src="figures/output.png" style="width:100%;max-width:1000px;margin-top:32px;">
+<p>This image depicts the initial condition provided for \( \overline{B_r} \), which is a simple sine function. Subsequently, this condition is altered while solving for \( \overline{B_{\phi}} \), allowing us to examine the influence of seed fields over time.</p>
+
+<img src="figures/manysine.png" style="width:100%;max-width:1000px;margin-top:32px;">
+<p>The plot illustrates the time evolution of \( \overline{B_r} \). It is evident that the magnetic field decays as time progresses.</p>
+
+
+<img src="figures/B_r_t_final.gif" style="width:100%;max-width:1000px;margin-top:32px;">
+<p>The animation presents the time evolution of \( \overline{B_r} \).</p>
+
+<img src="figures/twoini.png" style="width:100%;max-width:1000px;margin-top:32px;">
+<p>To examine the impact of the choice of initial condition on field evolution, we employ two different initial functions, as depicted. It is important to note that these functions also have different boundary conditions.</p>
+
+<img src="figures/twoinires.png" style="width:100%;max-width:1000px;margin-top:32px;">
+<p>This plot illustrates the time evolution of two magnetic fields with different initial conditions.</p>
+
+
+<img src="figures/B_mean_final.gif" style="width:100%;max-width:1000px;margin-top:32px;">
+<p>This animation illustrates the time evolution of the mean magnetic field. After obtaining \( \overline{B_r} \) and \( \overline{B_{\phi}} \), we calculate the mean magnetic field using the theory discussed earlier. Due to the different initial values of \( \overline{B_{\phi}} \), the boundary condition is not satisfied on the right side.</p>
+
+
+<img src="figures/pitch1_final.gif" style="width:100%;max-width:1000px;margin-top:32px;">
+<p>The pitch angles found are plotted against radius and evolved over time, as shown.</p>
+
+<img src="figures/spattial.png" style="width:100%;max-width:1000px;margin-top:32px;">
+<p>This graph showcases the magnetic field strength over different \(r\), which follows an exponentially decaying trend.</p
+
+<img src="figures/loglog.png" style="width:100%;max-width:1000px;margin-top:32px;">
+<p>Here, we plot the logarithm of the mean magnetic field against time to determine the decay constant. This analysis is conducted for a single radius. The decay constant in this case is -0.547.</p>
+
+<img src="figures/decay.png" style="width:100%;max-width:1000px;margin-top:32px;">
+<p>Lastly, we plot the decay constant against all radii. It can be observed that the decay constant is negative for all radii, indicating magnetic field decay.</p>
+
+    
+<h3>Conclusions</h3>
+
+<ul>
+  <li><strong>Evolution of Magnetic Field Magnitude and Decay Rate:</strong>
+    <ul>
+      <li>The magnetic field magnitude consistently decays over time, as expected due to diffusion processes.</li>
+      <li>The exponential decay rate is negative. Thus, our decay model is a good fit and can explain the field evolution. Thus, we can conclude that the decay equation is a valid solution for \( \overline{B} \) </li>
+   <li>The plot of \(\log_{10}\) scaled value of magnetic field against time was a straight line plot. The slopes are negative because of the decaying nature of the field.</li>
+    </ul>
+  </li>
+  
+  <li><strong>Evolution of Spatial Solutions for \( \overline{B_r} \) and \(\overline{B_{\phi}} \), and Pitch Angle \( p \):</strong>
+    <ul>
+      <li>The spatial solutions for \( \overline{B_r} \) and \( \overline{B_{\phi}} \) follow an exponential decay pattern, though discrepancies in boundary conditions may affect accuracy.</li>
+      <li>The pitch angle \( p \) of the mean magnetic field exhibits minimal variation over time. This might be because of the initial conditions we used to evolve \(r\) and \(\phi\) fields.</li>
+    </ul>
+  </li>
+  
+  <li><strong>Impact of Different Boundary Conditions:</strong>
+    <ul>
+      <li>Boundary conditions significantly influence magnetic field behavior, with challenges in maintaining integrity.</li>
+      <li>Relative anti-symmetric ghost zones have limitations in preserving boundary conditions, especially with the complex diffusion equation.</li>
+      <li>This is because, in relative anti-symmetric ghost zones, the double derivative is put to 0. This might work perfectly if we were solving in \(z\). But in this case, we have first and second derivatives as well as the field value as such in the equation. Thus, the setting of second derivatives to 0 will not alone enforce the boundary conditions.</li>
+    </ul>
+  </li>
+  
+  <li><strong>Impact of Different Seed Fields:</strong>
+    <ul>
+      <li>Different seed fields influence magnetic field evolution, with consistent decay observed across implementations.</li>
+      <li>Higher seed fields may exhibit slower diffusion rates. However, overall decay trends remain unchanged.</li>
+    </ul>
+  </li>
+</ul>
+
+  </div>
+  </div>
+
+
+
+
+  <div class="w3-container" id="task2">
+    <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">TASK 2</span></h5>
+    <h3>Aim</h3>
+    <p>The objective here is to extend task 1 onto the \(\alpha\Omega\) dynamo. Here, like earlier, we solve the induction equation, i.e., diffusion equation with alpha and omega dynamo generating terms, and then fit it using a model. One extension is to find the critical dynamo number and compare it with theory. After determining \( D_c \), comparing the growth rate obtained for a given value of \( D \) (for \( |D| > |D_c| \)) with the no-z solution prediction for the local growth rate \( \gamma \) is to be done. This comparison should also be made for \( D_c \). The agreement between the obtained results and expectations provides insights into the dynamo behavior. Like in task 1, we study the magnetic field evolution for different seed magnetic fields and boundary conditions.</p>
+    <h3>Equations</h3>
+    \[ \frac{\partial \overline B_r}{\partial t} = -  \frac{\partial}{\partial z}(\alpha \overline B_{\phi}) + \eta_t \left[  \frac{\partial}{\partial r} \left( \frac{1}{r}  \frac{\partial}{\partial r}(r \overline B_r)\right) +  \frac{\partial ^2 \overline B_r}{\partial z^2} \right] \]
+
+\[ \frac{\partial \overline B_{\phi}}{\partial t} = - q\Omega \overline B_{r} + \eta_t \left[  \frac{\partial}{\partial r} \left( \frac{1}{r}  \frac{\partial}{\partial r}(r \overline B_{\phi})\right) +  \frac{\partial ^2 \overline B_{\phi}}{\partial z^2} \right] \]
+
+By applying no-\(z\) approximation and expanding, equations become:
+\[ \frac{\partial \overline B_r}{\partial t} = -  \frac{2}{\pi h}(\alpha \overline B_{\phi}) + \eta_t \left[ \frac{\partial ^2 \overline B}{\partial r^2} +  \frac{1}{r}  \frac{\partial \overline B}{\partial r} - \frac{\overline B}{r^2} +  \frac{\pi^2 }{4h^2}\overline B_r \right] \]
+
+\[\frac{\partial \overline B_{\phi}}{\partial t} = - q\Omega \overline B_{r} + \eta_t \left[  \frac{\partial ^2 \overline B}{\partial r^2} +  \frac{1}{r}  \frac{\partial \overline B}{\partial r} - \frac{\overline B}{r^2} +  \frac{\pi^2 }{4h^2}\overline B_{\phi} \right] \]
+<p>The dimensionless form of equations becomes:</p>
+\[ \frac{\partial \tilde B}{\partial \tilde t} = -  \frac{2}{\pi}(\alpha \tilde B_{\phi}) + \left[ \frac{\partial ^2 \tilde B}{\partial\tilde r^2} +  \frac{1}{\tilde r}  \frac{\partial \tilde B}{\partial\tilde r} - \frac{\tilde B}{\tilde r^2} +  \frac{\pi^2 }{4}\tilde B \right] \]
+
+\[ \frac{\partial \tilde B}{\partial \tilde t} = - q\Omega \tilde B_{r} + \left[  \frac{\partial ^2 \tilde B}{\partial\tilde r^2} +  \frac{1}{\tilde r}  \frac{\partial \tilde B}{\partial\tilde r} - \frac{\tilde B}{\tilde r^2} +  \frac{\pi^2}{4}\tilde B \right] \]
+
+<p>We will use the following definitions in our implementation:</p>
+\[\alpha = \alpha_0(r)\hat\alpha(z);\hat \alpha = sin\left(\pi \tilde z\right)\]
+\[R_\alpha = \frac{\alpha_0h}{\eta_t}; \ R_\Omega = \frac{-q\Omega h^2}{\eta_t}\]
+
+<p>We will be keeping \(\alpha\) a constant</p>
+<p>The dynamo number \( D \) is defined as:</p>
+
+<p style="text-indent: 50px;">\[ D = -\frac{{\alpha_0 q \Omega h^3}}{{3 \eta^2 t}} \]</p>
+
+<p>where \( q = -\frac{{d \ln \Omega}}{{d \ln r}} \) and \( \alpha_0 > 0 \) is the amplitude of the alpha effect. Here, \( q > 0 \) if \( \Omega \) decreases with \( r \), which is generally observed in galaxies, leading to \( D < 0 \).</p>
+
+<p>The dynamo number \( D \) determines the behavior of the system. Specifically, if \( |D| > |D_c| \), where \( D_c \) is the critical dynamo number, exponential decay transitions to exponential growth.</p>
+
+
+<h3>Method</h3>
+<p>We provided a mixed sinewave function as a seed magnetic field for both \(B_r\) and \(B_{\phi}\). 6th order finite differencing was used to calculate the spatial derivatives. To impose boundary conditions, we used anti-symmetric ghost zones. Then, we evolved the field in time using 4-th 4th-order Runge-Kutta methods.</p>
+
+<p>Then, we found the mean value of the field and plotted the pitch angles using the same equation as in task 1. Different seed fields were studied by looking at the evolution plots of different initial conditions. We also studied the effect of different boundary conditions using symmetric, anti-symmetric,relative-antisymmetric, and smooth ghost zones.</p>
+
+<p>The exponential fitting of log(10) magnetic field strength values reveals the decay rates. Since we are solving in r, the local and global decay rates can be found. The global rates are found when the simulation is run for a long time, and we get a constant slope value.</p>
+
+<p>The value of r when the slope of the decay rate curve becomes 0 corresponds to the critical dynamo number, which can be calculated using the equation for D at this critical r point. The dynamo number can be directly plotted using the r array and equations given in the above section.</p>
+
+<h3>Results</h3>
+
+<img src="figures/Initial_conditions_save.png" style="width:100%;max-width:1000px;margin-top:32px;">
+<p>This image depicts the initial condition provided for \( \overline{B_r} \) and \( \overline{B_{\phi}} \). We provided a mixture of sine waves. Subsequently, this condition is altered, allowing us to examine the influence of seed fields over time.</p>
+
+<img src="figures/B_evolution_radial.png" style="width:100%;max-width:1000px;margin-top:32px;">
+<p>This illustrates the evolution of the mean magnetic field at different radial values in time.</p>
+<img src="figures/evolution of br t2.png" style="width:100%;max-width:1000px;margin-top:32px;">
+<p>The plot illustrates the time evolution of \( \overline{B_r} \). It is evident that the magnetic field decays first, and soon, the dynamo action takes over, and we can see a growth of the field over time. For \( \overline{B_{\phi}} \), we also get a similar plot with the growth of fields.  </p>
+
+
+<img src="figures/b mean t2.png" style="width:100%;max-width:1000px;margin-top:32px;">
+<p>The plot presents the time evolution of \( \overline{B} \). This is the magnitude calculated from \(r\) and \(\phi\). Here, the field also grows over time. Thus, our simulation to create dynamos worked well, and the constants provided were of good values.</p>
+
+<img src="figures/new in con.png" style="width:100%;max-width:1000px;margin-top:32px;">
+<p>To examine the impact of the choice of initial condition on field evolution, we employ two more different initial functions, the first one as depicted.</p>
+
+<img src="figures/new ic evo.png" style="width:100%;max-width:1000px;margin-top:32px;">
+<p>This plot illustrates the time evolution of the mean magnetic field with the above initial condition. It still grows, but the strength is very different.</p>
+
+<img src="figures/sbs.png" style="width:100%;max-width:1000px;margin-top:32px;">
+<p>This plot illustrates the time evolution of \( \overline{B} \) for different boundary conditions. The boundary conditions significantly influence the magnetic field behavior. We can see that only anti-symmetric ghost zones keep the boundary conditions.</p>
+
+
+<img src="figures/pitchpitch.png" style="width:100%;max-width:1000px;margin-top:32px;">
+<p>The pitch angles found are plotted against radius and evolved over time, as shown. This is very much dependent on the initial condition we choose.</p>
+
+
+<img src="figures/loonglog.png" style="width:100%;max-width:1000px;margin-top:32px;">
+<p>Here, we plot the logarithm of the mean magnetic field against time. Unlike in task 1, we had a positive slope of 0.87.</p>
+
+<img src="figures/growth_rates_markes.png" style="width:100%;max-width:1000px;margin-top:32px;">
+<p>Lastly, we plot the decay constant, or growth rate, in this case, against all radii. It can be observed that the rate flips sign at the radius marked above indicates the critical dynamo number. Next, we evolved this same code for a longer time to get the global growth rate.</p>
+
+<img src="figures/glob.png" style="width:100%;max-width:1000px;margin-top:32px;">
+<p>Here, we plotted the theoretical function for local growth rates; the source for this equation is provided in the reference section. Now we have increased the time to 10s, we can see that our growth rate is almost constant; this is the global growth rate, and the value is 0.89.</p>
+
+<h3>Conclusions</h3>
+
+<ul>
+  <li><strong>Evolution of Magnetic Field Magnitude :</strong>
+    <ul>
+      <li>The magnetic field magnitude decays in the beginning, but then grows over time. This can be explained by the dynamo action.</li>
+   <li>The plot of \(\log_{10}\) scaled value of magnetic field against time was a straight line at the beginning, but then it starts exponentially increasing. This might be because the field started to grow, and the decay rate is getting less negative. If we evolve it long enough, it will cross zero, and there might be a way to get a critical dynamo number from this..</li>
+    </ul>
+  </li>
+  
+  <li><strong>Evolution of Spatial Solutions for \( \overline{B_r} \) and \(\overline{B_{\phi}} \), and Pitch Angle \( p \):</strong>
+    <ul>
+      <li>The spatial solutions for \( \overline{B_r} \) and \( \overline{B_{\phi}} \) follow an exponential growth pattern.</li>
+      <li>The pitch angle \( p \) of the mean magnetic field exhibits minimal variation over time. It slowly becomes constant as time evolves.</li>
+    </ul>
+  </li>
+  
+  <li><strong>Impact of Different Boundary Conditions:</strong>
+    <ul>
+      <li>Boundary conditions significantly influence magnetic field behavior.</li>
+      <li> Anti-symmetric ghost zones perfectly maintained the boundary values; we used this for all the studies.</li>
+      <li>To study the influence of boundary conditions, we also plotted the evolution using smooth, symmetric, and relative anti-symmetric ghost zones. However, although the pattern of growth is similar, none of them can keep the boundary constant.</li>
+    </ul>
+  </li>
+  
+  <li><strong>Impact of Different Seed Fields:</strong>
+    <ul>
+      <li>Different seed fields do not influence the evolution.</li>
+      <li>No memory of seed field is retained in the final evolution of dominating eigenmode.</li>
+    </ul>
+  </li>
+
+  <li><strong>Global and local decay constants:</strong>
+    <ul>
+      <li>The local growth rates(or decay rates) were plotted, and we found the zero crossing point, i.e., the point where the growth rate becomes zero at a radius value of 9.77.</li>
+      <li>Higher seed fields have higher growth rates. </li>
+      <li>We then evolved for a longer time and plotted the theoretical values of local growth rates. Here, the growth rate from our simulation is almost constant. Thus, we get our global growth rate, for this case it is 0.89 </li>
+  </li>
+</ul>
+
+  </div>
+  </div>
+
+
+
+
+
+
+  <div class="w3-container" id="task3">
+    <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w2-wide">GALACTIC DYNAMO SIMULATION WITH RADIAL INFLOW (1D in r)</span></h5>
+    <h3>ABSTRACT</h3>
+    <p>Dynamo theory explains the sustained generation and evolution of magnetic fields across cosmic timescales. Mean-field dynamo theory offers insights into the presence and structure of large-scale magnetic fields in disc galaxies. This study investigates the influence of radial inflow, a prevalent phenomenon in such discs, on dynamo activity in the kinematic regime. The objective is to determine whether radial inflows amplify or attenuate dynamo action. Three different velocity profiles and a case without considering any inflows were studied and compared to reach a conclusion. Contrary to expectations,  findings demonstrate that radial motions impede rather than enhance dynamo activity. Specifically, the dynamo struggles to replenish the magnetic field transported by radial flows away from regions of efficient generation, thereby inhibiting its effectiveness. This study is done for a standard \(\alpha-\Omega\) dynamo, and equations are solved one dimensional in \(r\). Thin disk approximation and no-\(z\) approximations are used, and disk flaring is not considered.</p>
+    <h3>INTRODUCTION</h3>
+    <p>Dynamo theory traces its origins back to pioneering works by Parker (1971a) and Vainshtein and Ruzmaikin (1971), who proposed mean-field dynamo models to explain the generation of magnetic fields in spiral galaxies. Dynamos play a crucial role in shaping the magnetic environment of various astrophysical systems, including galaxies, stars, and accretion disks. Understanding dynamo mechanisms is essential for deciphering cosmic magnetism, star formation, and galactic evolution.
+    </p>
+    <p>
+    In galactic mean-field theory, the evolution of magnetic fields is comprehensively described by the induction equation, which plays a pivotal role in understanding the dynamics of these fields within cosmic structures. The induction equation, fundamental to
+    magnetohydrodynamics (MHD), explains how magnetic fields evolve under the influence of various physical processes. The \(\alpha-\Omega\)dynamo model represents a cornerstone in galactic dynamo theory, offering a robust framework for studying large-scale magnetic fields in spiral galaxies. In this model, the mean magnetic field evolution is governed by the combined effects of turbulent \(\alpha\)-effect and differential rotation,\(\Omega\)-effect. Mathematically, the mean-field dynamo equation takes the form:
+    \[\frac{\partial \mathbf{B}}{\partial t} = \nabla \times (\mathbf{V} \times \mathbf{B}) + \nabla \times (\alpha \mathbf{B}) - \nabla \times (\eta \nabla \times \mathbf{B})\]
+    
+    Where \(\mathbf{B}\) represents the mean magnetic field, \(\mathbf{V}\) is the velocity field, \(\alpha\) denotes the turbulent diffusivity, and \(\eta\) is the magnetic diffusivity. This formalism captures the dynamic interplay between fluid motion and magnetic field amplification, providing insights into galactic magnetic field evolution over cosmic timescales.
+    </p>
+    <p>
+    The induction equation comprises two key components: one governing the evolution of the radial magnetic field (\( \overline{B}_r \)) and the other dictating the evolution of the azimuthal magnetic field (\( \overline{B}_{\phi} \)). These equations are generally expressed in cylindrical coordinates (\( r, \phi, z \)). The evolution of the radial and azimuthal magnetic fields is described by the following equations:
+    \[
+    \frac{\partial \overline{B}_r}{\partial t} = -\frac{\partial}{\partial z}(\alpha \overline{B}_{\phi}) - \frac{\overline{V}_r}{r}\frac{\partial}{\partial r}(r\overline{B}_r) + \eta_t \left[ \frac{\partial}{\partial r} \left( \frac{1}{r} \frac{\partial}{\partial r}(r\overline{B}_r)\right) + \frac{\partial^2 \overline{B}_r}{\partial z^2} \right]
+    \]
+    
+    \[
+    \frac{\partial \overline{B}_{\phi}}{\partial t} = -q\Omega \overline{B}_r - \frac{\partial}{\partial r}(\overline{V}_r\overline{B}_{\phi}) + \eta_t \left[ \frac{\partial}{\partial r} \left( \frac{1}{r} \frac{\partial}{\partial r}(r\overline{B}_{\phi})\right) + \frac{\partial^2 \overline{B}_{\phi}}{\partial z^2} \right]
+    \]
+    
+    Here, we apply no-\(z\) approximation to the derivatives in \(z\).
+    </P>
+    
+    <p>
+    Radial inflow, a prevalent phenomenon in galactic discs, significantly influences dynamo activity. The advection of magnetic fields by inflowing material alters the magnetic field distribution, impacting its generation and evolution. In the \(\alpha\Omega\) dynamo framework, the effect of radial inflow on magnetic field advection is encapsulated in the induction equation, contributing to the overall dynamics of galactic magnetism. That is, in short, radial inflows tend to suppress dynamo action.</p>
+    <p>
+    When there's no significant magnetic field extending to infinity (which is necessary for a dynamo system), the dynamo must constantly replenish the magnetic field carried away by the radial flow from where it's generated most efficiently. This makes it harder for the dynamo to sustain itself. Additionally, the compression of the magnetic field, described by the term  \(B(\nabla \cdot \mathbf{v})\)  in the induction equation, doesn't counterbalance this effect. Instead, it leads to a sharper peak in magnetic field strength at smaller radii. In simpler terms, the inflow of material away from where the magnetic field is generated makes it challenging for the dynamo to maintain the magnetic field, and the compression of the magnetic field only makes the situation more pronounced by concentrating the field strength towards the center.
+    </p>
+    
+    <h3>METHODS</h3>
+    
+
+    <h4>The simplified numerical model</h4>
+    <p>The dimensionless equations used are in accordance with D. Moss et al. (2000). It is as follows:</p>
+    \[
+    \frac{\partial B_r}{\partial t} = -\lambda Rv \frac{v_r}{r} \frac{\partial}{\partial r} (B_r r) - R\alpha B_\phi - B_r + \lambda^2 \frac{\partial}{\partial r} \left[ \frac{1}{r} \frac{\partial}{\partial r} (r B_r) \right]
+    \]
+    
+    \[
+    \frac{\partial B_\phi}{\partial t} = -\lambda Rv \frac{\partial}{\partial r} (v_r B_\phi) + R\omega r B_r \frac{\partial \Omega}{\partial r} - B_\phi + \lambda^2 \frac{\partial}{\partial r} \left[ \frac{1}{r} \frac{\partial}{\partial r} (r B_\phi) \right]
+    \]
+    For \(\Omega\), we used the Brandt rotation law:
+    \[\Omega=\frac{\Omega_0}{(1+(r/r_{\omega})^2)^{1/2}}\]
+    <p>These equations represent the time evolution of the magnetic field components \(B_r\) and \(B_\phi\) in a cylindrical coordinate system.</p>
+    
+    <p>The value of \(r_\omega\) is set to be 0.2R, where R is the endpoint radius used to make length scales dimensionless. The dynamo numbers are
+    \[ R_\alpha = \frac{\alpha_0 h_0}{\eta}, \, R_\omega = \frac{h^2 \Omega_0}{\eta}, \, R_v = \frac{v_0 h}{\eta} \]</p>
+    
+    <p>Boundary conditions \(B_r=B_{\phi}=0\) are applied on the outer boundary of \(r_f=15.5 \, \text{kpc}\) as well as inner boundary \(r_i=0.01 \, \text{kpc}\), which is 1 in the dimensionless case (chosen to avoid "division by zero" and "overflow" errors).</p>
+    
+    <p>In this study, we only consider the axisymmetric solutions, i.e., the \(\phi\) derivatives are not considered. We consider three different velocity profiles, namely:</p>
+    <ul>
+      <li><strong>Profile 1:</strong> \( v_r = \sin(\pi r) \)</li>
+      <li><strong>Profile 2:</strong> \( v_r = \begin{cases} -\sin\left(\frac{\pi r}{r_\omega}\right), & r \leq r_\omega \\ \sin\left[\frac{\pi(r - r_\omega)}{1 - r_\omega}\right], & r > r_\omega \end{cases} \)</li>
+      <li><strong>Profile 3:</strong> \( v_r = \begin{cases} -\sin\left(\frac{\pi r}{r_\omega}\right), & r \leq r_\omega \\ 0, & r > r_\omega \end{cases} \)</li>
+    </ul>
+      
+    <p>By keeping the value of \(R_v\) to 1 (i.e., \(v_0\) about 0.7 km/s), we run the codes for all three profiles and compare the results. The code is automated to run until the global growth rate is attained. We first determined the global growth rate in the linear regime, \(\Gamma\), for \(R_v\) set at 1. Next, for velocity profile 1, we varied \(R_v\) from -3 to +3, again determining the global growth rates. We used \(R_{\alpha}=1, R_{\omega}=10\), and \(\lambda=0.05\). The number of total spatial steps was 50, with 10,000-time steps per unit of time, but these dramatic changes in resolution did not affect results. The variation of the pitch angle is also studied.</p>
+    
+    <h4>Numerical methods implemented</h4>
+    <p>For this task, we implemented the following numerical methods:</p>
+    <ul>
+      <li><strong>Finite differencing:</strong> 6th-order finite differencing. We employ a 6th-order finite differencing scheme to calculate spatial derivatives numerically. The scheme utilizes the values of the function at nearby grid points to approximate the derivative at each point. The scheme approximates the spatial derivatives of a function \(f(x)\) using values of \(f\) at nearby grid points. The central difference formula for the 6th order scheme can be expressed as:
+        \[
+        \frac{{df}}{{dx}}(x_i) \approx \frac{1}{60h} \left(-\frac{147}{10}f(x_{i-3}) + 6f(x_{i-2}) - \frac{15}{2}f(x_{i-1
+    
+    }) + \frac{20}{3}f(x_{i}) - \frac{15}{2}f(x_{i+1}) + 6f(x_{i+2}) - \frac{147}{10}f(x_{i+3})\right)
+        \]
+        Where:
+        - \(f(x_i)\) is the value of the function \(f\) at grid point \(x_i\),
+        - \(h\) is the spatial step size,
+        - \(x_{i-3}, x_{i-2}, \ldots, x_{i+3}\) are neighboring grid points.</li>
+      <li><strong>Runge-Kutta integration:</strong> The fourth-order Runge-Kutta method is a numerical technique for solving ordinary differential equations (ODEs). It approximates the solution at the next time step \(t_{n+1}\) based on the solution at the current time step \(t_n\). The RK4 method consists of four stages (k1, k2, k3, k4) for each time step, and the update formula is given by:
+        \[
+        \begin{align*}
+        k_1 &= hf(t_n, y_n) \\
+        k_2 &= hf(t_n + \frac{1}{2}h, y_n + \frac{1}{2}k_1) \\
+        k_3 &= hf(t_n + \frac{1}{2}h, y_n + \frac{1}{2}k_2) \\
+        k_4 &= hf(t_n + h, y_n + k_3) \\
+        y_{n+1} &= y_n + \frac{1}{6}(k_1 + 2k_2 + 2k_3 + k_4)
+        \end{align*}
+        \]
+        Where:
+        - \(t_n\) and \(t_{n+1}\) are the current and next time steps, respectively,
+        - \(y_n\) is the approximate solution at time \(t_n\),
+        - \(h\) is the time step size,
+        - \(f(t_n, y_n)\) is the derivative of the function \(y(t)\) with respect to \(t\) evaluated at time \(t_n\) and \(y_n\),
+        - \(k_1\), \(k_2\), \(k_3\), and \(k_4\) are intermediate slopes.</li>
+      
+        <li><strong>Implementation of boundary conditions:</strong> The ghost zone handling technique is critical to numerical simulations, especially when employing finite difference schemes to solve partial differential equations (PDEs) on a discrete grid. In our simulation, we utilize various strategies to handle ghost zones, which are additional grid points introduced beyond the physical domain to accommodate boundary conditions and ensure accurate numerical computations near the boundaries. The simulations were run using symmetric, anti-symmetric, and relative anti-symmetric ghost zones, and anti-symmetric ghost zones were found to be good at keeping both boundaries at 0. Anti-symmetric boundary conditions enforce anti-symmetry in the fields across the boundary. This is achieved by reflecting the values of the fields about the boundary and negating them, ensuring that the fields exhibit anti-symmetric behavior near the boundaries.</li>
+    <li><strong>Automation of the code to get global decay rate</strong>  The local growth rate is calculated at each unit diffusion time; we also calculate the mean of these values and continuously check if their differences come under a specific tolerance value set at 0.001. If the values come under tolerance, we are already in the global growth rate stage. To enhance precision, there is a patience limit, i.e., three more steps, and if the mean value is still under tolerance, the code is stopped.
+    </li>
+    
+      </ul>
+    
+    
+    <h3>RESULTS</h3>
+    <figure id="evogif" style="text-align: center;">
+      In Figure 1,2 and Table 1, the initial parameters for the simulation and the velocity profiles are shown. The initial conditions are chosen to be a sine wave with one negative. The velocity profiles are chosen to be a sine wave, a combination of two sine waves, and a combination of a sine wave and a constant. The parameters are converted to dimensionless units using the values provided in the table.
+      
+      <img src="figures/new/ini_con.png" style="width:15cm;" alt="Growth Rates">
+      <figcaption>Figure 1: The initial conditions for simulation, both are chosen to be a sine wave with one negative.</figcaption>
+</figure>
+
+<figure id="evogif" style="text-align: center;">
+      
+  <img src="figures/new/vel_prof.png" style="width:15cm;" alt="Growth Rates">
+  <figcaption>Figure 2: The velocity profiles we are analyzing for this study.</figcaption>
+</figure>
+    <table border="1" align="center">
+      <caption>TABLE 1: Converting parameter values into dimensionless units.</caption>
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Value in Dimensional Units</th>
+          <th>Value in Dimensionless Units</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>\(r_i\),initial radius</td>
+          <td>1.0 x 10<sup>-2</sup> kpc</td>
+          <td>6.45 x 10<sup>-4</sup></td>
+        </tr>
+        <tr>
+          <td>\(r_f\),final radius</td>
+          <td>1.551 x 10<sup>1</sup> kpc</td>
+          <td>1.0</td>
+        </tr>
+        <tr>
+          <td>\(\eta\),diffusivity</td>
+          <td>3.4106 x 10<sup>-1</sup> kpc<sup>2</sup> / Gyr</td>
+          <td>1.04 x 10<sup>-3</sup></td>
+        </tr>
+        <tr>
+          <td>\(\omega_0\)</td>
+          <td>2.20 x 10<sup>2</sup> km / (kpc s)</td>
+          <td>1.65 x 10<sup>2</sup></td>
+        </tr>
+        <tr>
+          <td>\(r_{\omega}\)</td>
+          <td>3.102 x 10<sup>0</sup> kpc</td>
+          <td>2.0 x 10<sup>-1</sup></td>
+        </tr>
+        <tr>
+          <td>\(\alpha\)</td>
+          <td>1.5 x 10<sup>0</sup> km / s</td>
+          <td>7.25 x 10<sup>-2</sup></td>
+        </tr>
+        <tr>
+          <td>h,disk height</td>
+          <td>5.0 x 10<sup>-1</sup> kpc</td>
+          <td>3.22 x 10<sup>-2</sup></td>
+        </tr>
+        <tr>
+          <td>\(t_d\),diffusion time</td>
+          <td>7.33 x 10<sup>-1</sup> Gyr</td>
+          <td>1.0</td>
+        </tr>
+      </tbody>
+    </table>
+   
+    <h4>Field evolution</h4>
+    <figure id="eig1" style="text-align: center;">
+      <img src="figures/new/TRIAL4Final_eigen_modes.png" style="width:20cm;" alt="Growth Rates">
+      <figcaption>Figure 3: Plot showing the final eigenmode that dominates for velocity profile 1.</figcaption>
+    
+ 
+      <img src="figures/new/TRIAL5Final_eigen_modes.png" style="width:20cm;" alt="Growth Rates">
+      <figcaption>Figure 4: Plot showing the final eigenmode that dominates for velocity profile 2.</figcaption>
+   
+   
+ 
+      <img src="figures/new/TRIAL6Final_eigen_modes.png" style="width:20cm;" alt="Growth Rates">
+      <figcaption>Figure 5: Plot showing the final eigenmode that dominates for velocity profile 3.</figcaption>
+    </figure>
+
+
+
+    <figure id="eig0" style="text-align: center;">
+      <img src="figures/new/TRIAL10Final_eigen_modes.png" style="width:20cm;" alt="Growth Rates">
+      <figcaption>Figure 6: Plot showing the final eigenmode that dominates in the absence of any radial inflow.</figcaption>
+    </figure>
+    
+
+<p>In figures <a href="eig1">3,4 and 5</a>, the final eigenmode that dominates for each velocity profile we studied is shown. In figure <a href="eig0">6</a>, the plot of the dominant eigenmode in the absence of any inflow is shown. By comparing these two cases, i.e., in the presence and absence of radial velocity inflow, we can see that the presence of an inflow hinders dynamo action. The most dramatic change happened for the first velocity profile. But the third velocity profile and absence of outflow look very similar. But from the referenced four figures, it is safe to assume that the addition of a radial velocity suppresses dynamo action, and the growth will always be less than or equal to the growth in the absence of outflows, which is dependent on the chosen profile of velocity. In figures <a href="evogif">7, 8, and 9</a>, the animations of field evolution till the system attains a global growth rate is given. In figures <a href="figstrength">10,11 and 12</a>, the strength of the magnetic field and its radial dependence are depicted. There, we are getting linear growth; the slope of this plot gives the growth rate. </p>
+
+    <figure id="evogif" style="text-align: center;">
+      <img src="figures/new/TRIAL4B_evol.gif" style="width:20cm;" alt="Growth Rates">
+      <figcaption>Figure 7: Animation depicting the field evolution of radial and azimuthal fields, velocity profile 1.</figcaption>
+  
+    
+
+      <img src="figures/new/TRIAL5B_evol.gif" style="width:20cm;" alt="Growth Rates">
+      <figcaption>Figure 8: Animation depicting the field evolution of radial and azimuthal fields, velocity profile 2.</figcaption>
+   
+      <img src="figures/new/TRIAL6B_evol.gif" style="width:20cm;" alt="Growth Rates">
+      <figcaption>Figure 9: Animation depicting the field evolution of radial and azimuthal fields, velocity profile 3.</figcaption>
+</figure>
+
+    <figure id="figstrength" style="text-align: center;">
+      <img src="figures/new/TRIAL4B_growth_at_r_indices_all_time.png" style="width:20cm;" alt="Growth Rates">
+      <figcaption>Figure <a href="#str1">10</a>: Plot showing the field strength at different radii, velocity profile 1.</figcaption>
+    <img src="figures/new/TRIAL5B_growth_at_r_indices_all_time.png" style="width:20cm;" alt="Growth Rates">
+      <figcaption>Figure <a href="#str2">11</a>: Plot showing the field strength at different radii, velocity profile 2.</figcaption>
+     <img src="figures/new/TRIAL6B_growth_at_r_indices_all_time.png" style="width:20cm;" alt="Growth Rates">
+      <figcaption>Figure <a href="#str3">12</a>: Plot showing the field strength at different radii, velocity profile 3.</figcaption>
+    </figure>
+
+
+
+  <h4>Global growth rates</h4>
+  <p>Animation in figures <a href="commr">13,14,15 and 16</a> shows the evolution of local growth rates into a uniform growth rate. In the gif, we can see that initially, the slopes were different for each r, but slowly, they communicated, and their slopes became equal, which means that the system has attained a global growth rate. In figures<a href="gamma">18,19,20 and 21</a>, the evolution of gamma is shown. We can see that as time evolves, gamma gets into a constant value; at the end of the animation, the y-axis scale becomes very narrow, implying a global growth rate. We compared the final growth rates of all velocity profiles, including the case with no inflows; this is tabulated in TABLE 2. The analysis presented in Tables 2 and 3 is inspired by the main reference literature for this project(D. Moss et al., 2000), and the trend we obtained closely resembles the results in the paper. Notably, the growth rate is observed to be maximized for profile 3, closely mirroring the growth rate observed in the absence of inflows. Conversely, profile 1 exhibits the lowest growth rate, suggesting that this particular profile induces the most pronounced suppression of dynamo activity. For TABLE 2, the value of \(R_v\) was set to 1, but next, we considered a single velocity profile; in this study, profile 1, and varied \(R_v\) from -3 to +3. This was done to see if the sign of this dynamo number has an effect on the growth rate; the results are tabulated in TABLE 3. In TABLE 3, we have an unexpectedly high value for \(R_v\)=-3, but other than this, the result is in good agreement with the paper. Keeping this one anomalous value aside, we can conclude that as the absolute value of \(R_v\) increases, the growth rate decreases.</p>
+  </p>
+
+  <figure id="commr" style="text-align: center;">
+    <img src="figures/new/TRIAL4B_strength_evolution_slider_at_diff_r.gif" style="width:20cm;" alt="Growth Rates">
+    <figcaption>Figure 13: Growth rate for various radii, velocity profile 1.</figcaption>
+    <img src="figures/new/TRIAL5B_strength_evolution_slider_at_diff_r.gif" style="width:20cm;" alt="Growth Rates">
+    <figcaption>Figure 14: Growth rate for various radii, velocity profile 2.</figcaption>
+
+  
+
+    <img src="figures/new/TRIAL6B_strength_evolution_slider_at_diff_r.gif" style="width:20cm;" alt="Growth Rates">
+    <figcaption>Figure 15: Growth rate for various radii, velocity profile 3.</figcaption>
+ 
+    <img src="figures/new/TRIAL10B_strength_evolution_slider_at_diff_r.gif" style="width:20cm;" alt="Growth Rates">
+    <figcaption>Figure 16: Growth rate for various radii, no radial flows considered.</figcaption>
+</figure>
+
+
+<figure id="gamma" style="text-align: center;">
+  <img src="figures/new/TRIAL4gamma_evolution.gif" style="width:20cm;" alt="Growth Rates">
+  <figcaption>Figure 17: Animation depicting the evolution of growth rate, velocity profile 1.</figcaption>
+  <img src="figures/new/TRIAL5gamma_evolution.gif" style="width:20cm;" alt="Growth Rates">
+  <figcaption>Figure 18: Animation depicting the evolution of growth rate, velocity profile 2.</figcaption>
+
+
+
+  <img src="figures/new/TRIAL6gamma_evolution.gif" style="width:20cm;" al, owth Rates">
+  <figcaption>Figure 19: Animation depicting the evolution of growth rate, velocity profile 3.</figcaption>
+
+  <img src="figures/new/TRIAL10gamma_evolution.gif" style="width:20cm;" alt="Growth Rates">
+  <figcaption>Figure 20: Animation depicting the evolution of growth rate when there are no radial inflows.</figcaption>
+</figure>
+
+
+The simulation was run for all three velocity profiles and also for a case without any inflow. The global growth rates were calculated for all cases. The results are as follows:
+    <table border="1" align="center">
+      <caption>TABLE 2: Growth rates for different profiles.</caption>
+      <thead>
+        <tr>
+          <th>Velocity Profile</th>
+          <th>\(R_v\)</th>
+          <th>\(\Gamma\)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>0(No inflow)</td>
+          <td>0</td>
+          <td>1.9165 x 10<sup>-4</sup></td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>7.4819 x 10<sup>-4</sup></td>
+        </tr>
+        <tr>
+          <td>Profile 2</td>
+          <td>1</td>
+          <td>1.0452 x 10<sup>-4</sup></td>
+        </tr>
+        <tr>
+          <td>Profile 3</td>
+          <td>1</td>
+          <td>1.9188 x 10<sup>-4</sup></td>
+        </tr>
+      </tbody>
+    </table>
+    
+
+
+
+    <table border="1" align="center">
+      <caption>TABLE 3: Growth rates for different values of \(R_v\) for velocity profile 1.</caption>
+      <tbody>
+        <tr>
+          <th>\(R_v\)</th>
+          <td>-3</td>
+          <td>-2</td>
+          <td>-1</td>
+          <td>0</td>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <th>\(\Gamma\)</th>
+          <td>1.6986 x 10<sup>-4</sup></td>
+          <td>1.2279 x 10<sup>-4</sup></td>
+          <td>7.4819 x 10<sup>-4</sup></td>
+          <td>1.9188 x 10<sup>-4</sup></td>
+          <td>7.4 x 10<sup>-4</sup></td>
+          <td>1.2842 x 10<sup>-4</sup></td>
+          <td>1.009 x 10<sup>-4</sup></td>
+        </tr>
+      </tbody>
+    </table>
+    
+
+
+<h4>Pitch angle evolution</h4>
+<p>For the pitch angle evolution, we plotted the pitch angle at the last time step for all three velocity profiles. The results are shown in figures <a href="pitch1">21,22 and 23</a>. The pitch angle is almost constant for all cases, indicating that the pitch angle is not significantly affected by the radial inflow. The pitch angle is a crucial parameter in dynamo theory, as it characterizes the orientation of the magnetic field with respect to the rotation axis. The pitch angle evolution provides insights into the alignment of the magnetic field with the rotation axis, which is essential for understanding the dynamo process.</p>
+
+   
+
+    <figure id="fig-growth-rates" style="text-align: center;">
+      <img src="figures/new/TRIAL4pitch_angle_vs_r_at_last_time.png" style="width:20cm;" alt="Growth Rates">
+      <figcaption>Figure 21: Plot of the final state of pitch angle evolution, velocity profile 1.</figcaption>
+    </figure>
+   
+    <figure id="fig-growth-rates" style="text-align: center;">
+      <img src="figures/new/TRIAL5pitch_angle_vs_r_at_last_time.png" style="width:20cm;" alt="Growth Rates">
+      <figcaption>Figure 22: Plot of the final state of pitch angle evolution, velocity profile 2.</figcaption>
+    </figure>
+   
+    <figure id="fig-growth-rates" style="text-align: center;">
+      <img src="figures/new/TRIAL6pitch_angle_vs_r_at_last_time.png" style="width:20cm;" alt="Growth Rates">
+      <figcaption>Figure 23: Plot of the final state of pitch angle evolution, velocity profile 3.</figcaption>
+    </figure>
+
+    
+  <h4>Key findings</h4>
+  <p>The key findings from this study are as follows:</p>
+  <ol>
+    <li>Contrary to initial expectations, the study demonstrates that radial inflows hinder dynamo action rather than enhance it. Radial inflows in the galactic disc can disrupt the local conditions necessary for generating and maintaining magnetic fields. Magnetic fields are typically generated in regions where differential rotation causes twisting and amplification of the field lines. However,  radial inflows can disrupt this process by transporting magnetic fields away from these regions before they can fully amplify, thereby hindering dynamo action. The presence of radial inflows thus makes it challenging for the dynamo to sustain magnetic fields by constantly advecting them from regions of efficient generation.</li>
+    <li>Radial inflows introduce additional turbulence and mixing within the galactic disc, which can disrupt the ordered motion required for dynamo action. This turbulence can scatter and diffuse the magnetic fields, reducing their coherence and inhibiting the amplification process essential for dynamo activity.</li>
+    <li>The growth rate of the dynamo is maximized for profile 3, closely resembling the growth rate in the absence of inflows.</li>
+    <li>The results we obtained are in good agreement with the literature, but in TABLE 2, the case of \(R_v=-3\) is an anomaly. However, this does not change our inference because we have enough evidence from the field evolution and growth rate curves.</li>
+    <li>As the absolute value of \(R_v\) increases, the growth rate decreases, indicating that the sign of this dynamo number has a significant impact on dynamo activity.</li>
+    <li>The pitch angle evolution remains almost constant for all cases, suggesting that the pitch angle is not significantly affected by radial inflows.</li>
+    <li>This suggests that while radial inflows may affect the strength and coherence of magnetic fields, they have minimal impact on their overall alignment within the galactic disc.</li>
+  </ol>
+
+    
+   
+        
+        
+  <h3>CONCLUSIONS</h3>
+  <ul>
+    <li>
+      In this study, we investigated the influence of radial inflow on dynamo activity within galactic discs, particularly focusing on the behavior of large-scale magnetic fields in the presence of different velocity profiles. Our findings suggest that radial inflows impede rather than enhance dynamo action, as evident from figures <a href="eig1">3, 4, and 5</a>.
+    </li>
+    <li>
+      Radial inflows tend to suppress dynamo activity by transporting magnetic fields away from regions of efficient generation. This disrupts the replenishment of magnetic fields, making it challenging for the dynamo to sustain itself. The magnetic field compression further exacerbates this effect, leading to a concentration of magnetic field strength towards the galactic center.
+    </li>
+    <li>
+      We compared 3 different velocity profiles with sinusoidal dependence with radius and a case without considering any inflows; the results are in Tables 2 and 3. We found that we get a higher growth when the radial inflow is less pronounced. We also concluded that the absolute value of dynamo number \(R_v\) is inversely proportional to the growth rate. The animations for growth rate in figures <a href="gamma">18, 19, 20, and 21</a> support this conclusion.
+    </li>
+    <li>
+      The results agree with the literature, but we have some unexpected values in Table 3; this might be due to some value error during implementation.
+    </li>
+    <li>
+      \(R_v\) represents the ratio of the advection timescale to the diffusion timescale within the fluid medium where the dynamo operates. When the absolute value of \(R_v\) increases, diffusion becomes more dominant than advection. In this scenario, magnetic fields are more effectively diffused away from regions of generation, hindering their amplification and resulting in a lower dynamo growth rate.
+    </li>
+    <li>
+      Pitch angle evolution is relatively constant as found from figures <a href="pitch1">21, 22, and 23</a>. The stability of the galactic disc structure likely limits significant changes in magnetic field alignment despite radial inflows introducing turbulence. Other dominant factors, such as galactic and differential rotation, may overshadow the effects of radial inflows on magnetic field alignment. Conservation laws may contribute to maintaining the overall alignment of magnetic fields within the galactic disc.
+    </li>
+    <li>
+      Changes in pitch angle due to radial inflows may occur over longer time scales, making them relatively minor and not readily observable within the study's timeframe.
+    </li>
+  </ul>
+  <h4>Limitations</h4>
+  <ul>
+    <li>Because of high run times, the spatial resolution was compromised to optimize time resolution and thus run time.</li>
+    <li>Solving in only one dimension can be limiting; more interesting results and physics can be obtained in 2D.</li>
+    <li>Because of the long run times to make gif files, the fps was compromised, thus the less smooth transitions.</li>
+    <li>Probing into the non-linear regime.</li>
+  </ul>
+  <h4>Improvements and future scope</h4>
+  <ul>
+    <li>Incorporating more realistic parameters into the model.</li>
+    <li>Solving the dynamo equation in 2D.</li>
+    <li>Implementing more advanced and accurate numerical methods.</li>
+    <li>Incorporating disk flaring scenario and using alpha-quenching mechanisms.</li>
+    <li>Probing into the non-linear regime.</li>
+  </ul>
+  
+     
+
+    
+    
+    <h3>REFERENCES</h3>
+    <ol>
+      <li>D. Moss, D., Shukurov, A., & Sokoloff, D., 2000, Astronomy & Astrophysics, 358, 1142, <a href="https://doi.org/10.1051/0004-6361:20010492">https://doi.org/10.1051/0004-6361:20010492</a></li> 
+      <li>Shukurov, A., & Subramanian, K. 2021, Astrophysical magnetic fields, <a href="https://doi.org/10.1017/9781139046657">https://doi.org/10.1017/9781139046657</a></li>
+      <li>Chamandy, L., Shukurov, A., Subramanian, K., & Stoker, K. 2014, Monthly Notices of the Royal Astronomical Society, 443, 1867, <a href="https://doi.org/10.1093/mnras/stu1274">https://doi.org/10.1093/mnras/stu1274</a></li>
+      <li>D. Moss, D., & Shukurov, A. 2001, Astronomy & Astrophysics, 372, 1048, <a href="https://doi.org/10.1051/0004-6361:20010492">https://doi.org/10.1051/0004-6361:20010492</a></li> 
+    </ol>
+  </div>
+  </div>
+
+
+<!-- Menu Container -->
+<<div class="w3-container" id="menu">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">RELEVANT LINKS</span></h5>
+    <p>The link to my GitHub file, which contains all the codes: <a href="https://github.com/gayathri2011067/MHD2011067">GitHub Repository</a></p>
+    <p>The link to my project report: <a href="link-to-project-report">Project Report</a></p>
+   
+
+
+</body>
+</html>
